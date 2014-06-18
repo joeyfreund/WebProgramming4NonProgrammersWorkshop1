@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Web Programming For Non-Programmers, by Joey Freund</title>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700"  >
+
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry"></script>
+  <script type="text/javascript" src="js/demo.js"></script>
+
+  <script>
+
+
+  function show_vehicles_on_map_and_in_list(vehicles){
+    show_vehicles_in_list(vehicles);
+    show_vehicles_on_map(vehicles);
+  }
+
+
+  function find_vehicles(){
+    clear_list();
+    clear_map();
+    put_marker_in_center();
+    get_nearby_vehicle_info_and(show_vehicles_on_map_and_in_list);
+  }
+
+  </script>
+
+
+</head>
+
+
+<body onload="load_map('map-canvas')">
+
+  <h1>Demo App Using The MyTTC API</h1>
+
+
+  <div id="map-container" class="float-left">
+      <div id="map-canvas"></div>
+  </div>
+
+
+  <div id="list-container" class="float-left">
+      <button id="find-vehicles-button" class="styled-button" onclick="find_vehicles()">Find Vehicles</button>
+  </div>
+
+    
+</body>
+
+
+</html>
+
